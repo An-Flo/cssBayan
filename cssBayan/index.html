@@ -1,1 +1,85 @@
 
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>CSS Bayan</title> 
+        <style> 
+            .tab input,
+            .tab-content { 
+                display: none;
+                }
+            .tab { 
+                font: 0.8rem/1.2 Arial, sans-serif; 
+                border: 1px solid #e9eaec; 
+                border-radius: 3px; 
+                color: #848994; 
+                margin-bottom: 10px; 
+                }
+            .tab-title { 
+                padding: 10px; 
+                display: block; 
+                text-transform: uppercase; 
+                font-weight: bold; 
+                cursor: pointer; 
+                }
+            .tab-title::after { 
+                content: '+';  
+                float: right; 
+                } 
+            .tab-content { 
+                padding: 10px 20px; 
+                }
+            .tab :checked + 
+            .tab-title { 
+                background-color: #50a2de; 
+                border-radius: 3px 3px 0 0;  
+                color: #fff;  
+                } 
+            .tab :checked + 
+            .tab-title::after { 
+                content: '−'; 
+                } 
+            .tab :checked ~
+            .tab-content {
+                display: block; 
+                } 
+        </style>
+    </head> 
+    <body> 
+        <h1>Css Bayan</h1>
+    <div class="accordion">
+        <div class="tab">
+            <input type="checkbox" id="tab1" name="tab-group">
+            <label for="tab1" class="tab-title">First CodeJam</label>
+            <section class="tab-content"> 
+                <img src="https://i.ibb.co/10yP8Vx/firstcodejam.jpg" alt="firstcodejam" border="0">
+            </section>
+        </div>
+        <div class="tab">
+            <input type="checkbox" id="tab2" name="tab-group">
+            <label for="tab2" class="tab-title">HTML and CSS</label>
+            <section class="tab-content"> <img src="https://i.ibb.co/x1XtLXd/htmlandcss.jpg" alt="htmlandcss" border="0">                
+            </section>
+        </div> 
+        <div class="tab"> 
+            <input type="checkbox" id="tab3" name="tab-group"> 
+            <label for="tab3" class="tab-title">you're probably wondering how i ended up in this situation</label> 
+            <section class="tab-content"> <img src="https://i.ibb.co/phbKJTM/howamigethere.jpg" alt="howamigethere" border="0">
+            </section> 
+        </div>
+        <div class="tab"> 
+            <input type="checkbox" id="tab4" name="tab-group"> 
+            <label for="tab4" class="tab-title">Btw you know? I have a cat</label> 
+            <section class="tab-content"> <img src="https://i.ibb.co/cDRrLDb/btw.jpg" alt="btw" border="0">
+            </section> 
+        </div> 
+        <div class="tab"> 
+            <input type="checkbox" id="tab5" name="tab-group"> 
+            <label for="tab5" class="tab-title">You can't add music they said</label> 
+            <section class="tab-content"> <img src="https://i.ibb.co/B3PfHtw/memewithmusic.jpg" alt="memewithmusic" border="0"> 
+            </section> 
+        </div> 
+    </div> 
+    </body> 
+</html>
