@@ -4,57 +4,53 @@
     box-sizing: border-box;
 } 
 body {
+    display: flex;
+    justify-content: center;
     font-family: Arial;
-    line-height: 2;
+    line-height: 2rem;
     background-color:#968ed7;
-}
+    }
 
 h1 {
-    text-align: center;
+    text-align: center
 }
 
 .wrapper {
     padding: 10% 10%;
-    margin: 0 auto;
-    max-width: 100%;
+    margin: 2rem;
+    max-width: 80%;
+    box-shadow: 0 0 12px 4px #351fa3;
+    font-size: 0.9rem;
 }
 
-.tab input, .tab-content { 
-    display: none;
-    }
-.tab { 
+.tab, .tab1 {
+    display: block;
+    overflow: hidden;
     font: Arial; 
     border: 0.1rem solid #e9eaec;
-    border-radius: 0.5rem; 
-    color: #051332; 
-    margin-bottom: 0.6rem; 
-    }
+    border-radius: 0.5rem;
+    margin-bottom: 0.6rem;
+    transition: 0.3s;
+}
 
 .tab-title { 
     padding: 2%; 
-    display: block; 
-    font-size: 1rem;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    color: #170323;
+    }
+
+.tab-content {
+    display: none;
+    justify-content: center; 
+    padding: 10% 20%;
+    max-width: 100%;
+    animation: show 1s;
     transition: 0.5s; 
     }
 
-.tab-title::after { 
-    display: none;
-    background: url("https://i.ibb.co/GfZV9rP/pngwing-com.png") no-repeat 50% 50% / 1em 1em;
-    width: 1em;
-    content: "&";
-    color: transparent; 
-    float: right;
-    opacity: 100%;
-    transition: 0.5s ease-in-out; 
-    } 
-
-.tab-content { 
-    padding: 5% 20%;
-    max-width: 100%;
-    cursor: pointer;
-    animation: show 1s; 
-    }
 @keyframes show {
         from {
           opacity: 0;
@@ -62,54 +58,135 @@ h1 {
         to {
           opacity: 1;
         }
-      }    
-.tab :checked + .tab-title { 
+      } 
+     
+.input {
+    display: none;
+}
+
+.input:checked + .tab-title { 
     background-color: #5d3c86; 
     border-radius: 3px 3px 0 0;  
     color: #fff; 
     }
-.tab :checked + .tab-title::after {
+
+.input:checked + .tab-title + .tab-content {
+    display: block;
+    transition: 0.5s;
+    max-height: 100vh; 
+}
+
+.icon {
+    padding: 0;
+  width: 5vw;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.input:checked + .tab-title .icon {
     transform: rotate(-90deg);
-        }    
-    
-.tab :checked ~ .tab-content {
-    display: block; 
-    } 
+}
+
 .tab-content img {
         max-width: 100%;
         max-height: 100%;
         transition: 0.5s ease-in-out;
       }
+  
+@media (hover: hover) {
 
-.tab-content:active img {
-        filter: opacity(40%);
-      }
-      
-.tab:active label, .tab:active .tab-title > * {
-        color: #2c0517 !important;
-        opacity: 70%;
-        transition: 0.5s ease-in-out;
-      }
-      
-.accordion {
-    max-width: 100%;
-    box-shadow: 0 0 12px 4px #351fa3;
+    .tab:hover {
+        cursor: pointer;
+        transition: 0.3s;
     }
 
-input[id^=item-]:checked ~ .tab-content,
-    .tab:hover .tab-title::after {
+    .tab1:hover {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .tab:active {
+        opacity: 0.7;
+        cursor: wait;
+        transition: 0.3s;
+      }
+     
+    .tab1:active {
+        opacity: 0.7;
+        cursor: wait;
+        transition: 0.3s;
+      }  
+
+    .tab:active .tab-title {
+        color: blue;
+        transition: 0.3s;
+      } 
+      
+    .tab-title:hover + .tab-content {
+        display: block;
+        transition: 0.3s;
+        max-height: 100vh;
+      }
+      
+    .tab:hover .icon {
         transform: rotate(-90deg);
+        transition: 0.3s;
+      }
+    .tab1:hover .icon {
+        transform: rotate(-90deg);
+        transition: 0.3s;
+      }    
+
+    .wrapper:hover .tab-title {
+        background-color: #5d3c86;
+        color: #fff;
+        transition: 0.3s;
+      }
+      
+    .wrapper:hover .icon {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+      }
+      
+    .tab-content:hover {
+        transition: 0.3s;
+        max-height: 100vh;
+      } 
+  } 
+
+@media (max-width:1180px) {
+  
+    .wrapper {
+        font-size: 1rem;
     }
   
-  @media (hover: hover) {
-    .accordion:hover .tab-title {
-      background-color: #5d3c86;
-      color: #fff ; 
+    img {
+      max-width: 90%;
     }
-    .accordion:hover .tab-title::after {
-        display: block;
-      }
-    .tab-title:hover ~ .tab-content {
-        display: block;
-     }     
-  } 
+  
+    .icon {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s;
+    }
+  }
+  
+@media (max-width:320px) {
+    
+  
+    .wrapper {
+        font-size: 4rem;
+    }
+  
+    img {
+      max-width: 100%;
+    }
+  
+    .icon {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s;
+    }
+  }
