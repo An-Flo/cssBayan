@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    line-height: 2rem;
+    background-color:#968ed7;
+    }
+
+h1 {
+    text-align: center
+}
+
+.wrapper {
+    padding: 10% 10%;
+    margin: 2rem;
+    max-width: 80%;
+    box-shadow: 0 0 12px 4px #351fa3;
+    font-size: 1.3rem;
+}
+
+.tab, .tab1 {
+    display: block;
+    overflow: hidden;
+    font: Arial; 
+    border: 0.1rem solid #e9eaec;
+    border-radius: 0.5rem;
+    margin-bottom: 0.6rem;
+    transition: 0.3s;
+}
+
+.tab-title { 
+    padding: 2%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    color: #170323;
+    }
+
+.tab-content {
+    display: none;
+    justify-content: center; 
+    padding: 10% 20%;
+    max-width: 100%;
+    animation: show 1s;
+    transition: 0.5s; 
+    }
+
+@keyframes show {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      } 
+     
+.input {
+    display: none;
+}
+
+.input:checked + .tab-title { 
+    background-color: #5d3c86; 
+    border-radius: 3px 3px 0 0;  
+    color: #fff; 
+    }
+
+.input:checked + .tab-title + .tab-content {
+    display: block;
+    transition: 0.5s;
+    max-height: 100vh; 
+}
+
+.icon {
+    padding: 0;
+  width: 5vw;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.input:checked + .tab-title .icon {
+    transform: rotate(-90deg);
+}
+
+.tab-content img {
+        max-width: 100%;
+        max-height: 100%;
+        transition: 0.5s ease-in-out;
+      }
+  
+@media (hover: hover) {
+
+    .tab:hover {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .tab1:hover {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .tab:active {
+        opacity: 0.7;
+        cursor: wait;
+        transition: 0.3s;
+      }
+     
+    .tab1:active {
+        opacity: 0.7;
+        cursor: wait;
+        transition: 0.3s;
+      }  
+
+    .tab:active .tab-title {
+        color: blue;
+        transition: 0.3s;
+      } 
+      
+    .tab-title:hover + .tab-content {
+        display: block;
+        transition: 0.3s;
+        max-height: 100vh;
+      }
+      
+    .tab:hover .icon {
+        transform: rotate(-90deg);
+        transition: 0.3s;
+      }
+    .tab1:hover .icon {
+        transform: rotate(-90deg);
+        transition: 0.3s;
+      }    
+
+    .wrapper:hover .tab-title {
+        background-color: #5d3c86;
+        color: #fff;
+        transition: 0.3s;
+      }
+      
+    .wrapper:hover .icon {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+      }
+      
+    .tab-content:hover {
+        transition: 0.3s;
+        max-height: 100vh;
+      } 
+  } 
+
+@media (max-width:1180px) {
+  
+    .wrapper {
+        font-size: 1rem;
+    }
+    
+    .tab-content {
+        padding: 10% 4%;
+    }
+  
+    .icon {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s;
+    }
+  }
+  
+@media (max-width:320px) {
+    
+  
+    .wrapper {
+        font-size: 4rem;
+    }
+    
+    .tab-content {
+        padding: 10% 2%;    
+    }
+    
+    .icon {
+      opacity: 1;
+      visibility: visible;
+      transition: 0.3s;
+    }
+  }
