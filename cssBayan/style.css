@@ -20,7 +20,7 @@ h1 {
     margin: 2rem;
     max-width: 80%;
     box-shadow: 0 0 12px 4px #351fa3;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
 }
 
 .tab, .tab1 {
@@ -161,9 +161,9 @@ h1 {
     .wrapper {
         font-size: 1rem;
     }
-  
-    img {
-      max-width: 90%;
+    
+    .tab-content {
+        padding: 10% 4%;
     }
   
     .icon {
@@ -179,11 +179,11 @@ h1 {
     .wrapper {
         font-size: 4rem;
     }
-  
-    img {
-      max-width: 100%;
+    
+    .tab-content {
+        padding: 10% 2%;    
     }
-  
+    
     .icon {
       opacity: 1;
       visibility: visible;
